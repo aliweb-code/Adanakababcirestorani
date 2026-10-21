@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Adana Kabab Restoranı</title>
+<meta name="description" content="Adana, lülə, tikə, ciyər və digər kabab növləri. Ev sayağı limonad və kompotlar.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --kobalt:#14365F; --kobalt-tund:#0C2441; --qizil:#D8432B; --qizilgul:#F0B03A;
+  --fon:#F7F5F0; --yazi:#1B1B1F; --sonuk:#666A73;
+  --serif:'Fraunces',Georgia,'Times New Roman',serif;
+  --sans:'Manrope',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--yazi);background:var(--fon);line-height:1.65;font-size:17px}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--qizilgul);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+
+header{position:sticky;top:0;z-index:5;background:var(--kobalt-tund);color:#fff}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:var(--serif);font-weight:800;font-size:1.25rem;text-decoration:none}
+nav a{margin-left:22px;text-decoration:none;font-weight:500;font-size:.95rem;opacity:.9}
+nav a:hover{color:var(--qizilgul);opacity:1}
+
+.hero{background:var(--kobalt);color:#fff;padding:90px 0 100px}
+.hero .wrap{display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:center}
+.hero h1{font-family:var(--serif);font-weight:800;font-size:clamp(2.5rem,6.5vw,4.6rem);line-height:1.05;letter-spacing:-.015em}
+.hero p{margin-top:20px;max-width:46ch;color:#D5DEEB;font-size:1.1rem}
+.btns{margin-top:32px;display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-block;padding:13px 26px;border-radius:999px;font-weight:700;text-decoration:none;font-size:.98rem}
+.btn-esas{background:var(--qizilgul);color:var(--yazi)}
+.btn-esas:hover{background:#F6C25F}
+.btn-xett{border:2px solid #fff;color:#fff}
+.btn-xett:hover{background:#fff;color:var(--kobalt)}
+.sis{width:100%;max-width:360px;justify-self:center}
+
+section{padding:76px 0}
+h2{font-family:var(--serif);font-size:clamp(1.9rem,4vw,2.6rem);line-height:1.15;margin-bottom:12px}
+.lead{color:var(--sonuk);max-width:58ch;margin-bottom:40px}
+
+.qrup{display:grid;grid-template-columns:repeat(2,1fr);gap:44px 56px}
+.qrup h3{font-family:var(--serif);font-size:1.4rem;color:var(--qizil);padding-bottom:8px;border-bottom:2px solid var(--kobalt);margin-bottom:6px}
+.yemek{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid #E3DFD6}
+.yemek b{font-weight:700}
+.yemek small{display:block;color:var(--sonuk);font-size:.9rem;line-height:1.4}
+.qiymet{font-weight:700;white-space:nowrap;color:var(--kobalt)}
+.tam{grid-column:1 / -1}
+.qeyd{margin-top:36px;color:var(--sonuk);font-size:.92rem}
+
+.evsayagi{background:#FFF;border:2px solid var(--qizilgul);border-radius:14px;padding:22px 26px}
+.evsayagi h3{border-bottom-color:var(--qizilgul)}
+
+.haqqimizda{background:#EBE7DD}
+.haqqimizda .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.haqqimizda p+p{margin-top:14px}
+.xususiyyet{list-style:none}
+.xususiyyet li{padding:16px 0;border-bottom:1px solid #D2CCBE}
+.xususiyyet li:first-child{padding-top:0}
+.xususiyyet strong{display:block;font-family:var(--serif);font-size:1.15rem}
+
+.elaqe{background:var(--kobalt-tund);color:#fff}
+.elaqe .lead{color:#C6D2E3}
+.kartlar{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.kartlar h3{font-family:var(--serif);color:var(--qizilgul);font-size:1.15rem;margin-bottom:6px}
+.kartlar a{text-decoration:none;border-bottom:1px solid var(--qizilgul)}
+
+footer{background:#07182E;color:#A9B7CB;text-align:center;padding:22px 0;font-size:.9rem}
+
+@media (max-width:760px){
+  nav a{margin-left:14px;font-size:.88rem}
+  .hero .wrap,.haqqimizda .wrap,.qrup,.kartlar{grid-template-columns:1fr}
+  .sis{max-width:240px;order:-1}
+  section{padding:56px 0}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#top">Adana Kabab</a>
+    <nav aria-label="Əsas menyu">
+      <a href="#menyu">Menyu</a>
+      <a href="#haqqimizda">Haqqımızda</a>
+      <a href="#elaqe">Əlaqə</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Közdə bişən kabab, sıcaq lavaşla.</h1>
+        <p>Adana kababından quzu qabırğasına qədər bütün kabab növləri hər gün təzə ətdən, açıq közdə hazırlanır.</p>
+        <div class="btns">
+          <a class="btn btn-esas" href="tel:+994000000000">Zəng et, masa ayır</a>
+          <a class="btn btn-xett" href="#menyu">Menyuya bax</a>
+        </div>
+      </div>
+      <!-- Şiş (şampur) şəkli -->
+      <svg class="sis" viewBox="0 0 200 200" role="img" aria-label="Şişdə kabab şəkli">
+        <line x1="20" y1="180" x2="180" y2="20" stroke="#F0B03A" stroke-width="5" stroke-linecap="round"/>
+        <g stroke="#0C2441" stroke-width="3">
+          <ellipse cx="62" cy="138" rx="22" ry="14" transform="rotate(-45 62 138)" fill="#D8432B"/>
+          <ellipse cx="95" cy="105" rx="22" ry="14" transform="rotate(-45 95 105)" fill="#B8321E"/>
+          <ellipse cx="128" cy="72" rx="22" ry="14" transform="rotate(-45 128 72)" fill="#D8432B"/>
+        </g>
+        <circle cx="46" cy="66" r="12" fill="#F0B03A"/><circle cx="46" cy="66" r="5" fill="#14365F"/>
+      </svg>
+    </div>
+  </div>
+
+  <section id="menyu">
+    <div class="wrap">
+      <h2>Menyu</h2>
+      <p class="lead">Qiymətlər manatladır. Kabablar lavaş, közlənmiş pomidor-bibər, soğan və sumaqla verilir.</p>
+
+      <div class="qrup">
+
+        <div>
+          <h3>Ət kababları</h3>
+          <div class="yemek"><div><b>Adana kabab</b><small>Əl ilə doğranmış mal-quzu əti, acı bibərlə</small></div><span class="qiymet">10 ₼</span></div>
+          <div class="yemek"><div><b>Urfa kabab</b><small>Adana kimi, acısız</small></div><span class="qiymet">10 ₼</span></div>
+          <div class="yemek"><div><b>Lülə kabab (mal)</b><small>Soğan və ədviyyatla</small></div><span class="qiymet">9 ₼</span></div>
+          <div class="yemek"><div><b>Lülə kabab (quzu)</b><small>Quzu ətindən, quyruq piyi ilə</small></div><span class="qiymet">11 ₼</span></div>
+          <div class="yemek"><div><b>Tikə kabab (quzu)</b><small>Marinadlanmış quzu əti parçaları</small></div><span class="qiymet">15 ₼</span></div>
+          <div class="yemek"><div><b>Tikə kabab (mal)</b><small>Marinadlanmış mal əti parçaları</small></div><span class="qiymet">14 ₼</span></div>
+          <div class="yemek"><div><b>Şiş kabab</b><small>Quzu bud əti, közdə</small></div><span class="qiymet">14 ₼</span></div>
+          <div class="yemek"><div><b>Quzu qabırğası</b><small>Közdə bişmiş, yumşaq</small></div><span class="qiymet">16 ₼</span></div>
+          <div class="yemek"><div><b>Quzu kotleti</b><small>Marinadlı, sümüklü</small></div><span class="qiymet">17 ₼</span></div>
+        </div>
+
+        <div>
+          <h3>Digər kabablar</h3>
+          <div class="yemek"><div><b>Ciyər kababı</b><small>Quzu ciyəri, quyruq piyi və soğanla</small></div><span class="qiymet">10 ₼</span></div>
+          <div class="yemek"><div><b>Tavuq kababı</b><small>Marinadlanmış fileli tikələr</small></div><span class="qiymet">9 ₼</span></div>
+          <div class="yemek"><div><b>Tavuq qanadı</b><small>Közdə, ədviyyatlı</small></div><span class="qiymet">8 ₼</span></div>
+          <div class="yemek"><div><b>Bildirçin kababı</b><small>2 ədəd, bütöv bişirilir</small></div><span class="qiymet">12 ₼</span></div>
+          <div class="yemek"><div><b>Balıq kababı</b><small>Qızılbalıq tikələri, limonla</small></div><span class="qiymet">16 ₼</span></div>
+          <div class="yemek"><div><b>Tərəvəz kababı</b><small>Badımcan, pomidor, bibər, kartof</small></div><span class="qiymet">7 ₼</span></div>
+          <div class="yemek"><div><b>Beyti kabab</b><small>Lavaşa bükülmüş Adana, qatıq və pomidor sousu ilə</small></div><span class="qiymet">12 ₼</span></div>
+          <div class="yemek"><div><b>İskəndər kabab</b><small>Doğranmış lavaş üstündə, tomat sousu və qatıqla</small></div><span class="qiymet">13 ₼</span></div>
+          <div class="yemek"><div><b>Qarışıq kabab (2 nəfərlik)</b><small>Adana, lülə, tikə, ciyər, tavuq</small></div><span class="qiymet">38 ₼</span></div>
+        </div>
+
+        <div>
+          <h3>Əlavələr</h3>
+          <div class="yemek"><div><b>Çoban salatı</b></div><span class="qiymet">5 ₼</span></div>
+          <div class="yemek"><div><b>Közlənmiş tərəvəz</b><small>Pomidor, bibər, soğan</small></div><span class="qiymet">4 ₼</span></div>
+          <div class="yemek"><div><b>Əlavə lavaş</b></div><span class="qiymet">1 ₼</span></div>
+          <div class="yemek"><div><b>Qatıq</b></div><span class="qiymet">2 ₼</span></div>
+        </div>
+
+        <div>
+          <h3>Sərinləşdirici içkilər</h3>
+          <div class="yemek"><div><b>Coca-Cola</b><small>0.33 l</small></div><span class="qiymet">2.50 ₼</span></div>
+          <div class="yemek"><div><b>Fanta</b><small>0.33 l</small></div><span class="qiymet">2.50 ₼</span></div>
+          <div class="yemek"><div><b>Sprite</b><small>0.33 l</small></div><span class="qiymet">2.50 ₼</span></div>
+          <div class="yemek"><div><b>Moxito</b><small>Spirtsiz, nanə və lime ilə</small></div><span class="qiymet">5 ₼</span></div>
+          <div class="yemek"><div><b>Ayran</b></div><span class="qiymet">3 ₼</span></div>
+          <div class="yemek"><div><b>Su</b><small>0.5 l</small></div><span class="qiymet">1.50 ₼</span></div>
+          <div class="yemek"><div><b>Çay (armudu stəkan)</b></div><span class="qiymet">2.50 ₼</span></div>
+        </div>
+
+        <div class="tam evsayagi">
+          <h3>Ev sayağı içkilər — hamısı 2 ₼</h3>
+          <div class="yemek"><div><b>Ev limonadı</b></div><span class="qiymet">2 ₼</span></div>
+          <div class="yemek"><div><b>Reyhan kompotu</b></div><span class="qiymet">2 ₼</span></div>
+          <div class="yemek"><div><b>Quru meyvə kompotu</b></div><span class="qiymet">2 ₼</span></div>
+          <div class="yemek"><div><b>Nanəli limonad</b></div><span class="qiymet">2 ₼</span></div>
+        </div>
+
+      </div>
+      <p class="qeyd">Allergiyanız varsa, sifariş verəndə ofisiantımıza deyin.</p>
+    </div>
+  </section>
+
+  <section id="haqqimizda" class="haqqimizda">
+    <div class="wrap">
+      <div>
+        <h2>Haqqımızda</h2>
+        <p>Adana Kabab Restoranında hər şey sadə qaydada işləyir: ət hər gün təzə gətirilir, kabab sifariş veriləndə közə qoyulur, lavaş isə stolunuza sıcaq gəlir.</p>
+        <p>Menyumuzda Adana kababı ilə yanaşı lülə, tikə, ciyər, tavuq, balıq və tərəvəz kababı var. İçkilər üçün isə ev sayağı limonad və reyhan kompotunu sınayın.</p>
+      </div>
+      <ul class="xususiyyet">
+        <li><strong>Açıq közdə bişirmə</strong>Kababların hamısı kömür közündə hazırlanır</li>
+        <li><strong>Təzə ət</strong>Hər səhər təzə alınır, dondurulmuş ət işlətmirik</li>
+        <li><strong>Ev sayağı içkilər</strong>Limonad və kompotlar hər gün bizdə hazırlanır</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="elaqe" class="elaqe">
+    <div class="wrap">
+      <h2>Əlaqə</h2>
+      <p class="lead">Masa sifarişi və çatdırılma üçün zəng edin.</p>
+      <div class="kartlar">
+        <div>
+          <h3>Ünvan</h3>
+          <!-- BURANI ÖZ ÜNVANINLA ƏVƏZ ET -->
+          <p>Bakı şəhəri, ünvanı bura yazın</p>
+        </div>
+        <div>
+          <h3>İş saatları</h3>
+          <!-- İŞ SAATLARINI LAZIM OLSA DÜZƏLT -->
+          <p>Həftə içi: 11:00 – 21:00<br>Həftə sonu: 14:00 – 00:00</p>
+        </div>
+        <div>
+          <h3>Telefon</h3>
+          <!-- NÖMRƏNİ İKİ YERDƏ DƏYİŞ: href və görünən mətn -->
+          <p><a href="tel:+994000000000">+994 00 000 00 00</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>© 2026 Adana Kabab Restoranı. Bütün hüquqlar qorunur.</footer>
+
+</body>
+</html>
